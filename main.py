@@ -13,6 +13,12 @@ class Money:
     def __add__(self, other):
         return Money(self.rub + other.rub, self.kop + other.kop)
 
+    def __mul__(self, scalar: int):
+        return Money(self.rub * scalar, self.kop * scalar)
+
+    def __rmul__(self, scalar: int):
+        return Money(self.rub * scalar, self.kop * scalar)
+
     def __str__(self):
         return f'Monney({self.rub}, {self.kop:02d})'
 
@@ -24,3 +30,9 @@ if __name__ == "__main__":
     print(money2)
     money3 = money1 + money2
     print(money3)
+
+    money4 = money3 * 5
+    print(money4)
+
+    money5 = 5 * money3
+    print(money5)
