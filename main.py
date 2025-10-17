@@ -16,6 +16,12 @@ class Money:
     def __str__(self):
         return f'Monney({self.rub}, {self.kop:02d})'
 
+    def __sub__(self, other):
+        """Реализация оператора -"""
+
+    def __truediv__(self, other):
+        """Реализация целочисленного деления"""
+
 if __name__ == "__main__":
     money1 = Money(20, 120)
     money2 = Money(30,30)
